@@ -1,0 +1,44 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+
+buildscript {
+    repositories {
+      mavenCentral()
+		  mavenLocal()
+		  jcenter()
+    }
+    dependencies {
+classpath group: 'org.whitesource', name: 'whitesource-gradle-plugin', version: '17.11.3'
+    }
+}
+
+configurations {
+	compile
+	runtime
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile group: 'org.codehaus.cargo', name: 'simple-war', version: '1.7.16'
+} 
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: 'whitesource'
+
+whitesource {
+orgToken='9a97f3491d4c44afba6c41f83305f22dcea76842bdc6458dae838a81a47253ab'
+    checkPolicies = false
+    forceUpdate = false
+    failOnRejection = false
+    failOnError = false
+    productName = "C29035745"
+	projectName = "C29035745"
+	dependencyFilter includeAllDependencies
+wssUrl ='https://dev.whitesourcesoftware.com/agent'
+ }
+
