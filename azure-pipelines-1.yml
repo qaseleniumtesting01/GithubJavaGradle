@@ -17,3 +17,11 @@ steps:
   inputs:
     cwd: '$(System.DefaultWorkingDirectory)'
     projectName: 'C3535348'
+    configuration: |
+      productName = C2405719
+      projectName = C2405719
+      includes = **/*.java */*.zip
+      resolveAllDependencies = false
+      gradle.resolveDependencies = true
+      gradle.ignoreSourceFiles = true
+      excludeDependenciesFromNodes = .*gravitee.*
