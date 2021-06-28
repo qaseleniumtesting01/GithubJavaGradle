@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: WhiteSource@20
+  inputs:
+    cwd: '$(System.DefaultWorkingDirectory)'
+    projectName: 'C3535348'
+    configuration: |
+      productName = C2405719
+      projectName = C2405719
+      includes = **/*.java */*.zip
+      resolveAllDependencies = false
+      gradle.resolveDependencies = true
+      gradle.ignoreSourceFiles = true
+      excludeDependenciesFromNodes = .*gravitee.*
