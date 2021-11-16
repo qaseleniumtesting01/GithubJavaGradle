@@ -23,5 +23,5 @@ steps:
       includes = **/*.java */*.zip
       resolveAllDependencies = true
       gradle.resolveDependencies = true
-      gradle.ignoreSourceFiles = true
+      gradle.ignoreSourceFiles = false
       excludeDependenciesFromNodes = .*gravitee.*
